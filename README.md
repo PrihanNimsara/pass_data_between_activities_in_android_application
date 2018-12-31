@@ -8,12 +8,9 @@
 
 
 
-'''
-
-Intent intent = new Intent(getApplicationContext(),SecondActivity.class);
-intent.putExtra("age",12);
-intent.putExtra("name","prihan");
-startActivity(intent);
-
-'''
+```
+function test() {
+  console.log("notice the blank line before this function?");
+}
+```
 
