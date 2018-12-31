@@ -4,7 +4,7 @@
 
 - step one
 
-> SenderActivity
+> SenderActivity @octocat :+1
 
 ```ruby
 Intent intent = new Intent(getApplicationContext(),SecondActivity.class);
