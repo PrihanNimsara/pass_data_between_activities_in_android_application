@@ -26,7 +26,7 @@ public class FirstActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setDataTwo();
+               setDataFour();
             }
         });
     }
@@ -57,6 +57,31 @@ public class FirstActivity extends AppCompatActivity {
         student.setName("prihan");
 
         intent.putExtra("custom_object",student);
+        startActivity(intent);
+    }
+
+    private void setDataThree(){
+        Intent intent = new Intent(context,SecondActivity.class);
+
+        Bundle bundle = new Bundle();
+        bundle.putInt("age",0);
+        bundle.putString("name","prihan");
+
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
+
+    private void setDataFour(){
+        Intent intent = new Intent(context,SecondActivity.class);
+
+        Bundle bundle = new Bundle();
+
+        Student student = new Student();
+        student.setAge(20);
+        student.setName("prihan");
+
+        bundle.putSerializable("custom_object", student);
+        intent.putExtras(bundle);
         startActivity(intent);
     }
 }

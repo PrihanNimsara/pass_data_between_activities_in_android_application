@@ -37,8 +37,15 @@ public class SecondActivity extends AppCompatActivity {
 //        Integer age = student.getAge();
 //        String name = student.getName();
 
+//        Bundle bundle = getIntent().getExtras();
+//        Integer age = bundle.getInt("age");
+//        String name = bundle.getString("name");
+
+        Bundle bundle = getIntent().getExtras();
+        Student student = (Student) bundle.getSerializable("custom_object");
+        Integer age = student.getAge();
+        String name = student.getName();
 
         Toast.makeText(context, "My name is " + name + " and age is " + Integer.toString(age), Toast.LENGTH_SHORT).show();
-
     }
 }
