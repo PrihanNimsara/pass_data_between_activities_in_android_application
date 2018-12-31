@@ -2,7 +2,7 @@
 
 ###### How do I pass data between Activities in Android application?
 
-- step one
+- 01
 
 > SenderActivity @octocat :+1
 
@@ -28,6 +28,6 @@ Integer age = intent.getIntExtra("age",0);
 String name = intent.getStringExtra("name");
 ```
 
-- step two
+- 02
 
 
