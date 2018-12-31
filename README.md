@@ -6,8 +6,6 @@
 
 > SenderActivity
 
-
-
 ```ruby
 Intent intent = new Intent(getApplicationContext(),SecondActivity.class);
 intent.putExtra("age",12);
@@ -18,5 +16,15 @@ student.setAge(12);
 student.setName("nimal");
 
 startActivity(intent);
+```
+
+> ReceiverActivity
+
+```ruby
+Intent intent = getIntent();
+
+Student student = (Student)intent.getParcelableExtra("obj");
+Integer age = intent.getIntExtra("age",0);
+String name = intent.getStringExtra("name");
 ```
 
