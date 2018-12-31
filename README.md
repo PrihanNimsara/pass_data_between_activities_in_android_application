@@ -7,10 +7,13 @@
 > Pardon my French
 
 
+
 '''
+
 Intent intent = new Intent(getApplicationContext(),SecondActivity.class);
 intent.putExtra("age",12);
 intent.putExtra("name","prihan");
 startActivity(intent);
+
 '''
 
