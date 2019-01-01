@@ -1,4 +1,4 @@
-# Pass Data Between Activities in Android Application
+# Pass Data Between Activities in Android Application (by using Intent)
 
 ###### How do I pass data between Activities in Android application?
 
