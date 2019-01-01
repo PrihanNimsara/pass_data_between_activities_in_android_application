@@ -20,58 +20,58 @@
         Integer age = intent.getIntExtra("age",0);
         String name = intent.getStringExtra("name");
 ```       
-        
-
-> SenderActivity 
-
-```ruby
-Intent intent = new Intent(getApplicationContext(),SecondActivity.class);
-intent.putExtra("age",12);
-intent.putExtra("name","prihan");
-
-Student student = new Student();
-student.setAge(12);
-student.setName("nimal");
-
-startActivity(intent);
-```
-
-> ReceiverActivity
-
-```ruby
-Intent intent = getIntent();
-
-Student student = (Student)intent.getParcelableExtra("obj");
-Integer age = intent.getIntExtra("age",0);
-String name = intent.getStringExtra("name");
-```
 
 - 02
+import java.io.Serializable;
 
-> Create a model class which you want to pass
+public class Student  implements Serializable {
+
+    private Integer age;
+    private String name;
+
+    public Student() {
+    }
+
+    public Student(Integer age, String name) {
+        this.age = age;
+        this.name = name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
 
 > SenderActivity 
 
 ```ruby
-Intent intent = new Intent(getApplicationContext(),SecondActivity.class);
-intent.putExtra("age",12);
-intent.putExtra("name","prihan");
+        Intent intent = new Intent(context,SecondActivity.class);
 
-Student student = new Student();
-student.setAge(12);
-student.setName("nimal");
+        Student student = new Student();
+        student.setAge(20);
+        student.setName("prihan");
 
-startActivity(intent);
+        intent.putExtra("custom_object",student);
+        startActivity(intent);
 ```
 
 > ReceiverActivity
 
 ```ruby
-Intent intent = getIntent();
-
-Student student = (Student)intent.getParcelableExtra("obj");
-Integer age = intent.getIntExtra("age",0);
-String name = intent.getStringExtra("name");
-```
-
-
+        Intent intent = getIntent();
+        Student student = (Student) intent.getSerializableExtra("custom_object");
+        Integer age = student.getAge();
+        String name = student.getName();
+```  
