@@ -16,12 +16,11 @@
 > ReceiverActivity
 
 ```ruby
-Intent intent = getIntent();
-
-Student student = (Student)intent.getParcelableExtra("obj");
-Integer age = intent.getIntExtra("age",0);
-String name = intent.getStringExtra("name");
-
+        Intent intent = getIntent();
+        Integer age = intent.getIntExtra("age",0);
+        String name = intent.getStringExtra("name");
+```       
+        
 
 > SenderActivity 
 
