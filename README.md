@@ -7,6 +7,25 @@
 > SenderActivity 
 
 ```ruby
+        Intent intent = new Intent(context,SecondActivity.class);
+        intent.putExtra("age",20);
+        intent.putExtra("name","prihan");
+        startActivity(intent);
+```
+
+> ReceiverActivity
+
+```ruby
+Intent intent = getIntent();
+
+Student student = (Student)intent.getParcelableExtra("obj");
+Integer age = intent.getIntExtra("age",0);
+String name = intent.getStringExtra("name");
+
+
+> SenderActivity 
+
+```ruby
 Intent intent = new Intent(getApplicationContext(),SecondActivity.class);
 intent.putExtra("age",12);
 intent.putExtra("name","prihan");
