@@ -21,7 +21,9 @@
         String name = intent.getStringExtra("name");
 ```       
 
-- 02
+- 02  how to pass custome object
+
+```ruby
 import java.io.Serializable;
 
 public class Student  implements Serializable {
@@ -53,6 +55,7 @@ public class Student  implements Serializable {
         this.name = name;
     }
 }
+```
 
 > SenderActivity 
 
