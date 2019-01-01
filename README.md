@@ -175,3 +175,26 @@ public class Student  implements Parcelable {
         Integer age = student.getAge();
         String name = student.getName();
 ```  
+
+- 04  by use bundle with a intent
+
+> SenderActivity 
+
+```ruby
+        Intent intent = new Intent(context,SecondActivity.class);
+
+        Bundle bundle = new Bundle();
+        bundle.putInt("age",0);
+        bundle.putString("name","prihan");
+
+        intent.putExtras(bundle);
+        startActivity(intent);
+```
+
+> ReceiverActivity
+
+```ruby
+        Bundle bundle = getIntent().getExtras();
+        Integer age = bundle.getInt("age");
+        String name = bundle.getString("name");
+```
